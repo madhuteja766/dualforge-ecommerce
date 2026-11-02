@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import { ShoppingCart, LogOut, User, Search, LayoutDashboard, Store, Sun, Moon, Key, X, Heart } from 'lucide-react';
+import { API_BASE_URL } from '../apiConfig';
 
 const Navbar = () => {
   const { user, isAuthenticated, isAdmin, logout, getAuthHeaders } = useAuth();
@@ -161,7 +162,7 @@ const ChangePasswordModal = ({ isOpen, onClose, getAuthHeaders }) => {
     setError(false);
 
     try {
-      const res = await fetch('http://localhost:8080/api/users/change-password', {
+      const res = await fetch(`${API_BASE_URL}/api/users/change-password`, {
         method: 'PUT',
         headers: getAuthHeaders(),
         body: JSON.stringify({ currentPassword, newPassword })

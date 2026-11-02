@@ -142,7 +142,7 @@ const Checkout = () => {
             {placedOrderId && (
               <div className="receipt-section margin-top-20">
                 <a 
-                  href={`http://localhost:8080/api/orders/${placedOrderId}/invoice`} 
+                  href={`${API_ORDERS_URL}/${placedOrderId}/invoice`} 
                   target="_blank" 
                   rel="noreferrer"
                   className="btn-secondary flex-align-center gap-5 justify-center margin-bottom-15"
