@@ -15,6 +15,7 @@ start "DualForge Backend" cmd /k "cd backend && mvn spring-boot:run"
 echo.
 echo [2/2] Starting Vite React High-Speed Frontend (Port 5173)...
 start "DualForge Frontend" cmd /k "cd frontend && npm run dev"
+start http://localhost:5173
 
 echo.
 echo ========================================================
